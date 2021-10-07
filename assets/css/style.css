@@ -390,7 +390,7 @@ dl, ol, ul {
 }
 
 .navbar-b.navbar-trans .nav-link, .navbar-b.navbar-reduce .nav-link {
-	color: #fff;
+	color: #bab188;
 	text-transform: capitalize;
 	font-weight: 500;
 	font-size: 14px;
@@ -399,11 +399,11 @@ dl, ol, ul {
 }
 
 .navbar-b.navbar-trans .nav-link:hover, .navbar-b.navbar-reduce .nav-link:hover {
-	color: #1B1B1B;
+	color: #dcd9cc;
 }
 
 .navbar-b.navbar-trans .nav-link:hover {
-	color: #fff;
+	color: #dcd9cc;
 }
 
 .navbar-b.navbar-trans .show > .nav-link, .navbar-b.navbar-trans .active > .nav-link, .navbar-b.navbar-trans .nav-link.show, .navbar-b.navbar-trans .nav-link.active {
@@ -412,31 +412,30 @@ dl, ol, ul {
 
 .navbar-b.navbar-reduce {
 	transition: all .5s ease-in-out;
-	background-color: #fff;
+	background-color: #2b2c2d;
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
 
 .navbar-b.navbar-reduce .nav-link {
-	color: #000000;
+	color: #bab188;
 }
 
 .navbar-b.navbar-reduce .nav-link:hover {
-	color: #000;
+	color: #dcd9cc;
 }
 
 .navbar-b.navbar-reduce .show > .nav-link, .navbar-b.navbar-reduce .active > .nav-link, .navbar-b.navbar-reduce .nav-link.show, .navbar-b.navbar-reduce .nav-link.active {
-	color: #000;
+	color: #fff;
 }
 
-.navbar-b.navbar-reduce .navbar-brand {
-	background-image:url("../img/logo-dieni-moraes-sozinho.png");
+.navbar-b.navbar-reduce .navbar-brand {	
 	height: 68px;
     background-size: 116px;
 }
 
 .navbar-b.navbar-reduce .navbar-toggler span {
-	background-color: #1B1B1B;
+	background-color: #bab188;
 }
 
 .navbar-b .navbar-brand {
