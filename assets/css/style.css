@@ -432,7 +432,7 @@ dl, ol, ul {
 .navbar-b.navbar-reduce .navbar-brand {	
 	height: 50px;
     background-size: 89px;
-	background-image:url("../img/logo-dieni-moraes-sozinho.png");
+	/*background-image:url("../img/logo-dieni-moraes-sozinho.png");*/
 }
 
 .navbar-b.navbar-reduce .navbar-toggler span {
