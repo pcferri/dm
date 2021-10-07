@@ -413,8 +413,8 @@ dl, ol, ul {
 .navbar-b.navbar-reduce {
 	transition: all .5s ease-in-out;
 	background-color: #2b2c2d;
-	padding-top: 10px;
-	padding-bottom: 10px;
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
 
 .navbar-b.navbar-reduce .nav-link {
