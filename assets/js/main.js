@@ -1,10 +1,3 @@
-/*******************************************************
-    Template Name    : Shama - App Landing HTML Template
-    Author           : cute_theme
-    Version          : 1.0
-    Created          : 2020
-    File Description : Main Reaposive file of the template
-*******************************************************/
 (function ($) {
 	"use strict";
 
@@ -306,9 +299,11 @@ function enviarForm(){
 			url: frm.attr('action'),
 			data: frm.serialize(),
 			success: function (data) {
+				$('#contact-form input,#contact-form textarea').val('');
 				window.location.href="https://lp.dienimoraes.com.br/obrigado-revendedora";
 			},
 			error: function (data) {
+				$('#contact-form input,#contact-form textarea').val('');
 				window.location.href="https://lp.dienimoraes.com.br/obrigado-revendedora";
 			},
 		});
