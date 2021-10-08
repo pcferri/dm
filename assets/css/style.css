@@ -574,7 +574,7 @@ dl, ol, ul {
 	color: #fff;
 	text-align: center;
 	/*background: url(../img/home-bg.jpg);*/
-	background: url(../img/home-bg-2.jpg);
+	background: url(../img/home-bg-4.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
@@ -814,7 +814,7 @@ dl, ol, ul {
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-	height: 470px;
+	height: 270px;
 }
 
 .screenshort-frame {
@@ -1183,7 +1183,7 @@ dl, ol, ul {
  * 12.Faq Section Style
  *************************************/
 .faq-area {
-	background: #f4f7fa;
+	/*background: #f4f7fa;*/
 }
 
 .faq-area .faq-item .accordion .item {
@@ -1277,7 +1277,7 @@ dl, ol, ul {
  *************************************/
 
 .blog-area {
-	background: #fff;
+	background: #f4f7fa;
 }
 
 .blog-area .single-blog {
