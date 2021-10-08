@@ -1564,7 +1564,7 @@ dl, ol, ul {
 	max-width: 100%;
 }
 
-#contact-form .button {
+.contact-form .button {
 	background: url((unknown)) center center / auto repeat scroll, linear-gradient(rgb(247, 235, 194), rgb(198, 160, 76));
     font-family: Montserrat;
     color: rgb(43, 44, 45);

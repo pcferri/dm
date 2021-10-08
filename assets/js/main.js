@@ -291,7 +291,7 @@ function checkForm() {
 
 function enviarForm(){	
 	if(checkForm() == 0){	
-		var frm = $('#contact-form');	
+		var frm = $('#mauticform_capturaconsultoradienimoraessemijoias');	
 		$('#cmdEnviar').hide();
 
 		$.ajax({
