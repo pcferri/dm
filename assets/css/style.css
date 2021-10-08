@@ -61,7 +61,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-	color: #918aff;
+	color: #bab188;
 	text-decoration: none !important;
 	-moz-transition: all 0.5s ease-in-out 0s;
 	-ms-transition: all 0.5s ease-in-out 0s;
@@ -75,7 +75,7 @@ img {
 }
 
 a:hover {
-	color: #918aff;
+	color: #bab188;
 	-moz-transition: all 0.4s ease-in-out 0s;
 	-ms-transition: all 0.4s ease-in-out 0s;
 	-o-transition: all 0.4s ease-in-out 0s;
@@ -84,7 +84,7 @@ a:hover {
 }
 
 a:hover, a:focus {
-	color: #2b2c2d;
+	color: #bab188;
 	text-decoration: none;
 }
 
@@ -1183,7 +1183,7 @@ dl, ol, ul {
  * 12.Faq Section Style
  *************************************/
 .faq-area {
-	/*background: #f4f7fa;*/
+	background: #f4f7fa;
 }
 
 .faq-area .faq-item .accordion .item {
@@ -1277,7 +1277,7 @@ dl, ol, ul {
  *************************************/
 
 .blog-area {
-	background: #f4f7fa;
+	background: #fff;
 }
 
 .blog-area .single-blog {
@@ -1399,8 +1399,7 @@ dl, ol, ul {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
-	z-index: 1;
-	margin-top: 80px;
+	z-index: 1;	
 }
 
 .download-area::after {
