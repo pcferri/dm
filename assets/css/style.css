@@ -1565,7 +1565,18 @@ dl, ol, ul {
 }
 
 #contact-form .button {
-	margin: 0;
+	background: url((unknown)) center center / auto repeat scroll, linear-gradient(rgb(247, 235, 194), rgb(198, 160, 76));
+    font-family: Montserrat;
+    color: rgb(43, 44, 45);
+    font-size: 14px;
+    font-weight: 700;
+    padding: 15px 5px;
+    width: 300px;
+    border-radius: 5px;
+    margin: 0px 0px 0px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    border: 0px solid rgba(218, 210, 210, 0);
 }
 
 .form-group {
