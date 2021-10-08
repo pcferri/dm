@@ -281,3 +281,37 @@ $.ajax({
 function emdesenvolvimento(){
 	alert('O APP Consultoras Dieni Moraes está em fase final de desenvolvimento e nas próximas semanas estará disponível.')
 }
+
+
+function checkForm() {
+  return $('input[type=text]').filter(function () {
+	  if($(this).val().trim().length === 0){
+		$(this).addClass("aviso");
+		$(this).removeClass("sucesso");
+	  }else{
+		$(this).removeClass("aviso");
+		$(this).addClass("sucesso");
+	  }
+    return $(this).val().trim().length === 0;
+  }).length;
+}
+
+function enviarForm(){	
+	if(checkForm() == 0){	
+		var frm = $('#contact-form');	
+		$('#cmdEnviar').hide();
+
+		$.ajax({
+			type: frm.attr('method'),
+			url: frm.attr('action'),
+			data: frm.serialize(),
+			success: function (data) {
+				window.location.href="https://lp.dienimoraes.com.br/obrigado-revendedora";
+			},
+			error: function (data) {
+				window.location.href="https://lp.dienimoraes.com.br/obrigado-revendedora";
+			},
+		});
+	}
+}
+

@@ -1772,3 +1772,12 @@ button, input, textarea:focus {
 	font-size:12px;
 	color:#ccc
 }
+
+
+.aviso{
+	border:1px solid #dc3545 !important;
+}
+
+.sucesso{
+	border:0px!important;
+}
