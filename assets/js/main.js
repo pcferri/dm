@@ -175,3 +175,109 @@
     });
 	
 })(jQuery);
+
+
+
+
+if (typeof MauticSDKLoaded == 'undefined') {
+	var MauticSDKLoaded = true;
+	var head            = document.getElementsByTagName('head')[0];
+	var script          = document.createElement('script');
+	script.type         = 'text/javascript';
+	script.src          = 'https://mautic.dienimoraes.com.br/media/js/mautic-form.js';
+	script.onload       = function() {
+		MauticSDK.onLoad();
+	};
+	head.appendChild(script);
+	var MauticDomain = 'https://mautic.dienimoraes.com.br';
+	var MauticLang   = {
+		'submittingMessage': "Por favor, aguarde..."
+	}
+}else if (typeof MauticSDK != 'undefined') {
+	MauticSDK.onLoad();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var $instagram = {
+    user: "dienimoraessemijoias",
+    title: "SIGA NOSSO INSTAGRAM",
+    limit: 6,
+    token: 'IGQVJYWldkTDZAjWWZANUVd3dXY3ZAVNER2t2VVl2WjZATRk90bDRVenMtZAHhKWXptMzl4UXI2eXRmUU1GQTF0VFRKcGxNODZALaE42bFRIRW5xSGdTQTJYMXhKLVlxcUc0YzhtUVNtZAVZAB',
+    userid: 17841437909613030
+};
+
+$.ajax({
+	url: "https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token="+$instagram.token,
+	dataType: "jsonp",
+	type: "GET",
+	success: function(tt) {
+		var i = $("#instagram-grupo")
+			, o = (tt.access_token ? tt.access_token : $instagram.token)
+			, a = $instagram.userid;
+		$.ajax({
+			url: "https://graph.instagram.com/me/media?fields=permalink,media_url,media_type,thumbnail_url&access_token="+o,
+			dataType: "jsonp",
+			type: "GET",
+			success: function(t) {
+				if(t.error){
+					$("#instagram-grupo").hide();
+				}else{
+					var limit = (t.data.length > $instagram.limit ? $instagram.limit : t.data.length);
+					for (var e = 0; e < limit; e++){
+						i.append('<div class="screenshort-item"><a href="' + t.data[e].permalink +  '" '+ (t.data[e].media_type == "VIDEO" ? ' class="video" ' : '') +'  target="_blank"><img src="' + (t.data[e].media_type == "VIDEO" ? t.data[e].thumbnail_url : t.data[e].media_url) + '" class="img-fluid" /></a></div>');
+					}
+										
+					 // instagram-slide owlCarousel
+					$('.instagram.owl-carousel').owlCarousel({
+						loop:true,
+						margin: 30,
+						mouseDrag:true,
+						autoplay:true,
+						dots: false,
+						center:true,
+						smartSpeed:800,
+						responsiveClass:true,
+						responsive:{
+							0:{
+								items:1
+							},
+							600:{
+								items:3
+							},
+							1000:{
+								items:5
+							}
+						}
+					});
+					
+					
+				}
+			},
+			error: function(t) {
+				$("#instagram-grupo").hide()
+			}
+		})
+
+	},
+	error: function(t) {
+		$("#instagram-grupo").hide()
+	}
+})
+
+
+
+function emdesenvolvimento(){
+	alert('O APP Consultoras Dieni Moraes está em fase final de desenvolvimento e nas próximas semanas estará disponível.')
+}

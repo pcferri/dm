@@ -1,11 +1,3 @@
-/*******************************************************
-    Template Name    : Shama - App Landing HTML Template
-    Author           : cute_theme
-    Version          : 1.0
-    Created          : 2020
-    File Description : Main css file of the template
-*******************************************************/
-
 /**************************************
     -- Css Table of Content
     01.Generale Style
@@ -92,7 +84,7 @@ a:hover {
 }
 
 a:hover, a:focus {
-	color: #918aff;
+	color: #2b2c2d;
 	text-decoration: none;
 }
 
@@ -198,9 +190,9 @@ dl, ol, ul {
 }
 
 .small-title {
-	color: #333;
+	color: #bab188;
 	font-size: 10px;
-	background: #918aff52;
+	background: #2b2c2d;
 	display: inline-block;
 	padding: 5px 20px;
 	border-radius: 30px;
@@ -228,7 +220,7 @@ dl, ol, ul {
 .back-to-top {
 	position: fixed;
 	display: none;
-	color: #fff;
+	color: #bab188;
 	width: 40px;
 	height: 42px;
 	line-height: 40px;
@@ -236,13 +228,13 @@ dl, ol, ul {
 	right: 25px;
 	bottom: 20px;
 	text-align: center;
-	background: #918aff;
+	background: #2b2c2d;
 	transition: background 0.5s;
 	z-index: 11;
 }
 
 .back-to-top i {
-	color: #fff;
+	color: #bab188;
 	font-size: 20px;
 }
 
@@ -274,14 +266,14 @@ dl, ol, ul {
 	width: 35px;
 	height: 8px;
 	margin: 0 8px;
-	background: #918aff;
+	background: #2b2c2d;
 	border-radius: 30px;
 }
 
 .owl-theme .owl-dots .owl-dot.active span,
 .owl-theme .owl-dots .owl-dot:hover span {
 	background: transparent;
-	border: 2px solid #b4afff;
+	border: 2px solid #2b2c2d;
 }
 
 /**************************************
@@ -447,6 +439,17 @@ dl, ol, ul {
     height: 97px;
 }
 
+.rodape-logo {
+	background-image:url("../img/logo-dieni-moraes-completo.png");
+	background-size: 200px;
+    width: 200px;
+    background-repeat: no-repeat;
+    height: 97px;
+	display: block;
+	left: -22px;
+    position: relative;
+}
+
 .navbar-b .navbar-nav .dropdown-item.show .dropdown-menu, .navbar-b .dropdown.show .dropdown-menu, .navbar-b .dropdown-btn.show .dropdown-menu {
 	-webkit-transform: translate3d(0px, 0px, 0px);
 	transform: translate3d(0px, 0px, 0px);
@@ -570,7 +573,8 @@ dl, ol, ul {
 	position: relative;
 	color: #fff;
 	text-align: center;
-	background: url(../img/home-bg.jpg);
+	/*background: url(../img/home-bg.jpg);*/
+	background: url(../img/home-bg-2.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
@@ -601,7 +605,7 @@ dl, ol, ul {
 	position: absolute;
 	left: 0;
 	right: 0;
-	bottom: -5px;
+	bottom: -12%;
 	z-index: 1;
 	width: 100%;
 	margin: 0 auto;
@@ -676,7 +680,7 @@ dl, ol, ul {
 .choose-item:hover {
 	box-shadow: 0 1rem 3rem rgba(31,45,61,.125)!important;
 	transform: translate(0, -5px);
-	border-bottom: 4px solid #918aff;
+	border-bottom: 4px solid #2b2c2d;
 	border-radius: 20px 0;
 }
 
@@ -693,7 +697,7 @@ dl, ol, ul {
 }
 
 .choose-icon i {
-	color: #fff;
+	color: #c6a04c;
 	font-size: 35px;
 	line-height: 65px;
 }
@@ -706,18 +710,18 @@ dl, ol, ul {
 }
 
 .icon-bg-1 {
-	color: #fff;
-	background-color: #6f64e7 !important;
+	color: #c6a04c;
+	background-color: #2b2c2d !important;
 }
 
 .icon-bg-2 {
-	color: #fff;
-	background-color: #fbb019 !important;
+	color: #c6a04c;
+	background-color: #2b2c2d !important;
 }
 
 .icon-bg-3 {
-	color: #fff;
-	background-color: #fc60b2 !important;
+	color: #c6a04c;
+	background-color: #2b2c2d !important;
 }
 
 .icon-bg {
@@ -768,6 +772,8 @@ dl, ol, ul {
 	-ms-animation: bounce 3s infinite ease-in-out;
 	-moz-animation: bounce 3s infinite ease-in-out;
 	animation: bounce 3s infinite ease-in-out;
+	
+
 }
 
 @-webkit-keyframes bounce {
@@ -947,7 +953,7 @@ dl, ol, ul {
 .overview-info ul li:hover {
 	box-shadow: 0 1rem 2rem rgba(31,45,61,.125)!important;
 	transform: translate(0, -1px);
-	border-bottom: 3px solid #918aff;
+	border-bottom: 3px solid #2b2c2d;
 	border-radius: 20px 0;
 }
 
@@ -958,9 +964,9 @@ dl, ol, ul {
 }
 
 .overview-info ul li i {
-	color: #fff;
+	color: #c6a04c;
 	font-size: 20px;
-	background: #918aff;
+	background: #2b2c2d;
 	text-align: center;
 	width: 30px;
 	height: 30px;
@@ -1225,7 +1231,7 @@ dl, ol, ul {
 }
 
 .faq-area .faq-item .accordion .active .title h6 span {
-	color: #fff;
+	color: #bab188;
 }
 
 .faq-area .faq-item .accordion .accordion-info {
@@ -1233,8 +1239,8 @@ dl, ol, ul {
 	padding: 20px 15px;
 	margin-top: 15px;
 	margin-left: 0;
-	border-left: 2px solid #918aff;
-	border-right: 2px solid #918aff;
+	border-left: 2px solid #2b2c2d;
+	border-right: 2px solid #2b2c2d;
 	background: #ffffff;
 	border-radius: 0px 10px 0px 10px;
 }
@@ -1248,19 +1254,19 @@ dl, ol, ul {
 }
 
 .faq-area .faq-item .accordion .active .title {
-	color: #fff;
-	background: #918aff;
+	color: #bab188;
+	background: #2b2c2d;
 	-webkit-box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
 	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .faq-area .faq-item .accordion .active .title:after {
 	content: '\f068';
-	color: #fff;
+	color: #bab188;
 }
 
 .faq-area .faq-item .accordion .active .title h6 {
-	color: #fff;
+	color: #bab188;
 }
 
 .faq-img img {
@@ -1389,7 +1395,7 @@ dl, ol, ul {
 	position: relative;
 	color: #fff;
 	text-align: center;
-	background: url(../img/download-bg.jpg);
+	background: url(../img/download-bg-2.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
@@ -1407,8 +1413,8 @@ dl, ol, ul {
 	width: 100%;
 	opacity: .7;
 	z-index: -1;
-	background: #4776E6;
-	background-image: linear-gradient(to left, rgba(37, 92, 253, 0.85), rgba(59, 70, 236, 0.85), rgba(87, 64, 202, 0.85), rgba(108, 60, 187, 0.85), rgba(115, 0, 189, 0.85));
+	background: #2b2c2d;
+	/*background-image: linear-gradient(to left, rgba(37, 92, 253, 0.85), rgba(59, 70, 236, 0.85), rgba(87, 64, 202, 0.85), rgba(108, 60, 187, 0.85), rgba(115, 0, 189, 0.85));*/
 }
 
 .download-app-img {
@@ -1461,13 +1467,13 @@ dl, ol, ul {
 }
 
 .active-btn {
-	border: 2px solid #918aff;
-	background: #918aff;
+	border: 2px solid #c6a04c;
+	background: #c6a04c;
 }
 
 .download-btn:hover {
-	border: 2px solid #918aff;
-	background: #918aff;
+	border: 2px solid #d9b565;
+	background: #d9b565;
 }
 
 .download-btn p small {
@@ -1487,8 +1493,7 @@ dl, ol, ul {
 /**************************************
  * 15. Contact Section Style
  *************************************/
-.contact-area .item {
-}
+
 
 .contact-information {
 	margin-bottom: 15px;
@@ -1500,7 +1505,7 @@ dl, ol, ul {
 	margin-bottom: 30px;
 	padding: 20px 10px;
 	border-radius: 5px;
-	border-bottom: 3px solid #918aff;
+	border-bottom: 3px solid #2b2c2d;
 	box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.05);
 	-webkit-transition: all .4s;
 	transition: all .4s;
@@ -1512,7 +1517,7 @@ dl, ol, ul {
 	-webkit-box-shadow: 0 10px 40px rgba(0,0,0,.1);
 	box-shadow: 0 10px 40px rgba(0,0,0,.1);
 	box-shadow: 0 1rem 2rem rgba(31,45,61,.125)!important;
-	border-bottom: 3px solid #918aff;
+	border-bottom: 3px solid #2b2c2d;
 	border-radius: 20px 0;
 }
 
@@ -1532,8 +1537,8 @@ dl, ol, ul {
 }
 
 .contact-details:hover i {
-	color: #fff;
-	background: #918aff;
+	color: #c6a04c;
+	background: #2b2c2d;
 	-webkit-transition: all .4s;
 	transition: all .4s;
 }
@@ -1634,15 +1639,15 @@ button, input, textarea:focus {
 }
 
 .footer-social-icon a i:hover {
-	color: #ffffff;
-	background: #918aff;
+	color: #c6a04c;
+	background: #2b2c2d;
 }
 
 .footer-link h5 {
 	margin-bottom: 20px;
 	font-size: 18px;
 	font-weight: 700;
-	color: #ffffff;
+	color: #bab188;
 }
 
 .footer-link .list-menu li a {
@@ -1749,4 +1754,21 @@ button, input, textarea:focus {
 
 .copyright-area p a {
 	color: #918aff;
+}
+
+
+.destaque-texto-home{
+	color: #bab188;
+}
+
+
+.detalhe-texto-home{
+	font-size: 12px;
+    color: #666;
+}
+
+
+.rodape-texto-pequeno{
+	font-size:12px;
+	color:#ccc
 }

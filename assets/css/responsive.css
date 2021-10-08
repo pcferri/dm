@@ -219,6 +219,11 @@
 	}
 	.screenshort-frame {
 		display: none;
+	}	
+
+	.hero-equal-height{
+		min-height: 500px;
+
 	}
 	.screenshort-item img {
 		margin: auto;
