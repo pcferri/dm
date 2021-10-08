@@ -299,11 +299,11 @@ function enviarForm(){
 			url: frm.attr('action'),
 			data: frm.serialize(),
 			success: function (data) {
-				$('#contact-form input,#contact-form textarea').val('');
+				$('#mauticform_capturaconsultoradienimoraessemijoias input').val('');
 				window.location.href="https://lp.dienimoraes.com.br/obrigado-revendedora";
 			},
 			error: function (data) {
-				$('#contact-form input,#contact-form textarea').val('');
+				$('#mauticform_capturaconsultoradienimoraessemijoias input').val('');
 				window.location.href="https://lp.dienimoraes.com.br/obrigado-revendedora";
 			},
 		});
