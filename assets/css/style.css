@@ -1558,7 +1558,6 @@ dl, ol, ul {
 
 .botao-formulario {
 	background: url((unknown)) center center / auto repeat scroll, linear-gradient(rgb(247, 235, 194), rgb(198, 160, 76));
-    font-family: Montserrat;
     color: rgb(43, 44, 45);
     font-size: 14px;
     font-weight: 700;
@@ -1569,6 +1568,7 @@ dl, ol, ul {
     -webkit-box-pack: center;
     justify-content: center;
     border: 0px solid rgba(218, 210, 210, 0);
+	text-transform: uppercase;
 }
 
 .form-group {
