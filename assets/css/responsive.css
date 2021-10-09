@@ -1,15 +1,13 @@
-/*******************************************************
-    Template Name    : Shama - App Landing HTML Template
-    Author           : cute_theme
-    Version          : 1.0
-    Created          : 2020
-    File Description : Main Reaposive file of the template
-*******************************************************/
-
 @media screen and (max-width: 991px) and (min-width: 320px){
     .download-app-img{
         display: none;
     }
+	
+	.home-area::after {		
+		opacity: 0.8;
+	}
+	
+	
 }
 
 @media only screen and (min-width: 991px) and (max-width: 1024px) {
@@ -107,6 +105,9 @@
 	}
 	.home-area {
 		padding-top: 150px;
+	}
+	.hero-equal-height{
+		min-height: 400px;
 	}
 	.home-area .home-content h1 {
 		font-size: 33px;
