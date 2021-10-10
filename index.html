@@ -51,6 +51,18 @@
 
 <body>
 
+
+    <div class="loader-wrapper">
+        <div class="text-center middle">
+            <div class="lds-ellipsis">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+	
     <!-- Navbar Start -->
     <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
         <div class="container">
@@ -322,28 +334,33 @@
 								<div class="controls">
 									<div class="row">
 										<div class="col-lg-6 col-md-12">
-											<div class="form-group has-error has-danger">
+											<div class="form-group">
 												<input type="text" name="mauticform[txtnome]" placeholder="Seu nome completo" required="required"> </div>
 										</div>
 										<div class="col-lg-6 col-md-12">
-											<div class="form-group has-error has-danger">
+											<div class="form-group">
 												<input type="text" name="mauticform[txtemail]" placeholder="Seu e-mail" required="required"> </div>
 										</div>
 										<div class="col-lg-6 col-md-12">
-											<div class="form-group has-error has-danger">
+											<div class="form-group">
 												<input type="text" name="mauticform[txtcelular]" placeholder="Seu telefone com DDD" required="required"> </div>
 										</div>
 										<div class="col-lg-6 col-md-12">
-											<div class="form-group has-error has-danger">
+											<div class="form-group">
 												<input type="text" name="mauticform[txtcpf]" placeholder="Seu CPF" required="required"> </div>
 										</div>
 										<div class="col-lg-6 col-md-12">
-											<div class="form-group has-error has-danger">
-												<input type="text" name="mauticform[txtbairro]" placeholder="Bairro" required="required"> </div>
+											<div class="form-group">
+												<input type="text" name="mauticform[txtbairro]" placeholder="Bairro" required="required"> 
+											</div>											
 										</div>
 										<div class="col-lg-6 col-md-12">
-											<div class="form-group has-error has-danger">
-												<input type="text" name="mauticform[txtcidade]" placeholder="Cidade" required="required"> </div>
+											<div class="form-group">
+												<select name="mauticform[txtestado]" required="required"><option value="">Selecione seu estado</option><option data-id="11" value="RO">Rondônia</option><option data-id="12" value="AC">Acre</option><option data-id="13" value="AM">Amazonas</option><option data-id="14" value="RR">Roraima</option><option data-id="15" value="PA">Pará</option><option data-id="16" value="AP">Amapá</option><option data-id="17" value="TO">Tocantins</option><option data-id="21" value="MA">Maranhão</option><option data-id="22" value="PI">Piauí</option><option data-id="23" value="CE">Ceará</option><option data-id="24" value="RN">Rio Grande do Norte</option><option data-id="25" value="PB">Paraíba</option><option data-id="26" value="PE">Pernambuco</option><option data-id="27" value="AL">Alagoas</option><option data-id="28" value="SE">Sergipe</option><option data-id="29" value="BA">Bahia</option><option data-id="31" value="MG">Minas Gerais</option><option data-id="32" value="ES">Espírito Santo</option><option data-id="33" value="RJ">Rio de Janeiro</option><option data-id="35" value="SP">São Paulo</option><option data-id="41" value="PR">Paraná</option><option data-id="42" value="SC">Santa Catarina</option><option data-id="43" value="RS">Rio Grande do Sul</option><option data-id="50" value="MS">Mato Grosso do Sul</option><option data-id="51" value="MT">Mato Grosso</option><option data-id="52" value="GO">Goiás</option><option data-id="53" value="DF">Distrito Federal</option></select>
+											</div>
+											<div class="form-group">
+												<select name="mauticform[txtcidade]" required="required"><option value="">Selecione sua cidade</option></select>
+											</div>
 										</div>
 										<input type="hidden" name="mauticform[formId]" value="8">
 										<input type="hidden" name="mauticform[return]" value="">
@@ -637,9 +654,8 @@
     <a href="#" class="back-to-top back-to-top-pulse"><i class="fa fa-caret-up"></i></a>
 
     <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/plugins.js"></script>    
-    <script src="assets/js/main.min.js"></script>
-
+    <script src="assets/js/plugins.js"></script>    		
+	<script src="assets/js/main.min.js"></script>
 </body>
 
 </html>

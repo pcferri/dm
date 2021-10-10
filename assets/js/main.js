@@ -10,12 +10,6 @@
 		}
 	});
 	
-	// START PRELOADED
-    $(window).on('load', function() {
-        $('.loader-wrapper').fadeOut();
-        $('.loader-wrapper').delay(350).fadeOut('slow');
-    });
-	
 	// Navbar Menu Reduce 
 	$(window).trigger('scroll');
 	$(window).on('scroll', function () {
@@ -276,23 +270,109 @@ function emdesenvolvimento(){
 }
 
 
+function testaCPF(strCPF) {
+	var Soma;
+	var Resto;
+	Soma = 0;
+	if (strCPF == "00000000000") return false;
+
+	for (i=1; i<=9; i++) Soma = Soma + parseInt(strCPF.substring(i-1, i)) * (11 - i);
+	Resto = (Soma * 10) % 11;
+
+	if ((Resto == 10) || (Resto == 11))  Resto = 0;
+	if (Resto != parseInt(strCPF.substring(9, 10)) ) return false;
+
+	Soma = 0;
+	for (i = 1; i <= 10; i++) Soma = Soma + parseInt(strCPF.substring(i-1, i)) * (12 - i);
+	Resto = (Soma * 10) % 11;
+
+	if ((Resto == 10) || (Resto == 11))  Resto = 0;
+	if (Resto != parseInt(strCPF.substring(10, 11) ) ) return false;
+	return true;
+}
+
+
 function checkForm() {
-  return $('input[type=text]').filter(function () {
-	  if($(this).val().trim().length === 0){
-		$(this).addClass("aviso");
-		$(this).removeClass("sucesso");
+  return $('input[type=text],select,.not-full,.full').filter(function () {
+	  var isSelect = $(this).hasClass("full") || $(this).hasClass("not-full");
+	  if(isSelect){
+		  if($(this).hasClass("full")){
+			$(this).removeClass("aviso");
+			$(this).addClass("sucesso");
+		  }else{
+			$(this).addClass("aviso");
+			$(this).removeClass("sucesso");
+		  }
+	  }else{		 
+		  if($(this).val().trim().length === 0){
+			$(this).addClass("aviso");
+			$(this).removeClass("sucesso");
+		  }else{
+			$(this).removeClass("aviso");
+			$(this).addClass("sucesso");
+		  }
+	  }	  
+	  if(isSelect){
+		return $(this).hasClass("not-full");  
 	  }else{
-		$(this).removeClass("aviso");
-		$(this).addClass("sucesso");
-	  }
-    return $(this).val().trim().length === 0;
+		return $(this).val().trim().length === 0;
+	  }    
   }).length;
 }
 
+// Restricts input for the set of matched elements to the given inputFilter function.
+(function($) {
+  $.fn.inputFilter = function(inputFilter) {
+    return this.on("input keydown keyup mousedown mouseup select contextmenu drop", function() {
+      if (inputFilter(this.value)) {
+        this.oldValue = this.value;
+        this.oldSelectionStart = this.selectionStart;
+        this.oldSelectionEnd = this.selectionEnd;
+      } else if (this.hasOwnProperty("oldValue")) {
+        this.value = this.oldValue;
+        this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+      } else {
+        this.value = "";
+      }
+    });
+  };
+}(jQuery));
+
+$(document).ready(function() {
+  $("input[name='mauticform[txtcpf]'],input[name='mauticform[txtcelular]']").inputFilter(function(value) {
+    return /^\d*$/.test(value);  
+  });
+});
+
+function validateEmail(email) {
+  const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(email);
+}
+
 function enviarForm(){	
-	if(checkForm() == 0){	
+	var qtdValidacoes = checkForm();	
+	if(qtdValidacoes == 0){	
+		
+		if(testaCPF($("input[name='mauticform[txtcpf]']").val()) == false){
+			$("input[name='mauticform[txtcpf]']").removeClass("sucesso");
+			$("input[name='mauticform[txtcpf]']").addClass("aviso");
+			alert("O CPF informado é inválido.");
+			$("input[name='mauticform[txtcpf]']").focus();
+			return;
+		}	
+
+		if(validateEmail($("input[name='mauticform[txtemail]']").val()) == false){
+			$("input[name='mauticform[txtemail]']").removeClass("sucesso");
+			$("input[name='mauticform[txtemail]']").addClass("aviso");
+			alert("O e-mail informado é inválido.");
+			$("input[name='mauticform[txtemail]']").focus();
+			return;
+		}			
+	
 		var frm = $('#mauticform_capturaconsultoradienimoraessemijoias');	
-		$('#cmdEnviar').hide();
+		$('#cmdEnviar').hide();		
+		$('.loader-wrapper').show();
+		
 
 		$.ajax({
 			type: frm.attr('method'),
@@ -309,4 +389,51 @@ function enviarForm(){
 		});
 	}
 }
+	
+	
+	
+	
+var xhr;
+var select_state, $select_state;
+var select_city, $select_city;
+var estados = [{"id":11,"sigla":"RO","nome":"Rondônia","regiao":{"id":1,"sigla":"N","nome":"Norte"}},{"id":12,"sigla":"AC","nome":"Acre","regiao":{"id":1,"sigla":"N","nome":"Norte"}},{"id":13,"sigla":"AM","nome":"Amazonas","regiao":{"id":1,"sigla":"N","nome":"Norte"}},{"id":14,"sigla":"RR","nome":"Roraima","regiao":{"id":1,"sigla":"N","nome":"Norte"}},{"id":15,"sigla":"PA","nome":"Pará","regiao":{"id":1,"sigla":"N","nome":"Norte"}},{"id":16,"sigla":"AP","nome":"Amapá","regiao":{"id":1,"sigla":"N","nome":"Norte"}},{"id":17,"sigla":"TO","nome":"Tocantins","regiao":{"id":1,"sigla":"N","nome":"Norte"}},{"id":21,"sigla":"MA","nome":"Maranhão","regiao":{"id":2,"sigla":"NE","nome":"Nordeste"}},{"id":22,"sigla":"PI","nome":"Piauí","regiao":{"id":2,"sigla":"NE","nome":"Nordeste"}},{"id":23,"sigla":"CE","nome":"Ceará","regiao":{"id":2,"sigla":"NE","nome":"Nordeste"}},{"id":24,"sigla":"RN","nome":"Rio Grande do Norte","regiao":{"id":2,"sigla":"NE","nome":"Nordeste"}},{"id":25,"sigla":"PB","nome":"Paraíba","regiao":{"id":2,"sigla":"NE","nome":"Nordeste"}},{"id":26,"sigla":"PE","nome":"Pernambuco","regiao":{"id":2,"sigla":"NE","nome":"Nordeste"}},{"id":27,"sigla":"AL","nome":"Alagoas","regiao":{"id":2,"sigla":"NE","nome":"Nordeste"}},{"id":28,"sigla":"SE","nome":"Sergipe","regiao":{"id":2,"sigla":"NE","nome":"Nordeste"}},{"id":29,"sigla":"BA","nome":"Bahia","regiao":{"id":2,"sigla":"NE","nome":"Nordeste"}},{"id":31,"sigla":"MG","nome":"Minas Gerais","regiao":{"id":3,"sigla":"SE","nome":"Sudeste"}},{"id":32,"sigla":"ES","nome":"Espírito Santo","regiao":{"id":3,"sigla":"SE","nome":"Sudeste"}},{"id":33,"sigla":"RJ","nome":"Rio de Janeiro","regiao":{"id":3,"sigla":"SE","nome":"Sudeste"}},{"id":35,"sigla":"SP","nome":"São Paulo","regiao":{"id":3,"sigla":"SE","nome":"Sudeste"}},{"id":41,"sigla":"PR","nome":"Paraná","regiao":{"id":4,"sigla":"S","nome":"Sul"}},{"id":42,"sigla":"SC","nome":"Santa Catarina","regiao":{"id":4,"sigla":"S","nome":"Sul"}},{"id":43,"sigla":"RS","nome":"Rio Grande do Sul","regiao":{"id":4,"sigla":"S","nome":"Sul"}},{"id":50,"sigla":"MS","nome":"Mato Grosso do Sul","regiao":{"id":5,"sigla":"CO","nome":"Centro-Oeste"}},{"id":51,"sigla":"MT","nome":"Mato Grosso","regiao":{"id":5,"sigla":"CO","nome":"Centro-Oeste"}},{"id":52,"sigla":"GO","nome":"Goiás","regiao":{"id":5,"sigla":"CO","nome":"Centro-Oeste"}},{"id":53,"sigla":"DF","nome":"Distrito Federal","regiao":{"id":5,"sigla":"CO","nome":"Centro-Oeste"}}];
 
+$select_state = $("select[name='mauticform[txtestado]']").selectize({
+  onChange: function(value) {
+	if (!value.length) return;
+	var id_estado = 0;
+	$.each(estados, function() {
+		 if(this.sigla === value){ 
+			id_estado = this.id;
+		 } 
+	});
+	
+	select_city.disable();
+	select_city.clear();
+	select_city.clearOptions();
+	select_city.load(function(callback) {
+	  xhr && xhr.abort();
+	  xhr = $.ajax({
+		url: 'https://servicodados.ibge.gov.br/api/v1/localidades/estados/'+ id_estado +'/municipios',
+		success: function(results) {
+		  select_city.enable();
+		  callback(results);
+		},
+		error: function() {
+		  callback();
+		}
+	  })
+	});
+  }
+});
+
+$select_city = $("select[name='mauticform[txtcidade]']").selectize({
+  valueField: 'nome',
+  labelField: 'nome',
+  searchField: ['nome']
+});
+
+select_city  = $select_city[0].selectize;
+select_state = $select_state[0].selectize;
+select_state.setValue("RS");
+select_city.disable();
