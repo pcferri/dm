@@ -539,6 +539,12 @@ dl, ol, ul {
 	overflow: hidden;
 	padding-top: 0;
 	padding-bottom: 0;
+	font-size: 18px;
+    font-weight: 600;
+    justify-content: space-between;
+    line-height: 27px;
+    letter-spacing: .81px;
+    padding: 0 16px  3px;
 }
 
 .navbar-nav .nav-item .nav-link span {
@@ -1573,7 +1579,7 @@ dl, ol, ul {
 
 .botao-formulario {
 	background: url((unknown)) center center / auto repeat scroll, linear-gradient(rgb(247, 235, 194), rgb(198, 160, 76));
-    color: rgb(43, 44, 45);
+    color: #ffffff !important;
     font-size: 14px;
     font-weight: 700;
     padding: 15px 5px;
