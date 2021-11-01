@@ -95,7 +95,9 @@
 	.navbar-nav {
 		margin-top: 15px;
 	}
-	.owl-item.center img {transform: scale(1); }
+	
+	
+	#nossas-semijoias .owl-item.center img {transform: scale(1); }
 	.navbar-b .nav-item {
 		margin-bottom: 10px;
 	}

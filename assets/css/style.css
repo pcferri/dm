@@ -452,6 +452,9 @@ dl, ol, ul {
 	display: block;
 	left: -22px;
     position: relative;
+	margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 9px;
 }
 
 .navbar-b .navbar-nav .dropdown-item.show .dropdown-menu, .navbar-b .dropdown.show .dropdown-menu, .navbar-b .dropdown-btn.show .dropdown-menu {
@@ -1651,6 +1654,7 @@ button, input, textarea:focus {
 
 .footer-social-icon {
 	margin-top: 15px;
+	margin-bottom: 15px;
 }
 
 .footer-social-icon a i {
