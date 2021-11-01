@@ -1819,10 +1819,10 @@ button, input, textarea:focus {
 	border:0px!important;
 }
 
-#nossas-semijoias .owl-carousel .owl-stage-outer { padding: 5% 0; }
+#nossas-semijoias-grupo .owl-carousel .owl-stage-outer { padding: 5% 0; }
 
-#nossas-semijoias .owl-item img {
+#nossas-semijoias-grupo .owl-item img {
   transition: 0.45s;
 }
 
-#nossas-semijoias .owl-item.center img {transform: scale(2); }
+#nossas-semijoias-grupo .owl-item.center img {transform: scale(2); }
