@@ -742,7 +742,9 @@ dl, ol, ul {
 }
 
 .about-img {
-	text-align: center;
+	vertical-align: right;
+	height:345px;
+	width:345px;
 }
 
 .about-info {
@@ -1712,7 +1714,7 @@ button, input, textarea:focus {
 	transform: translateY(-100%);
 }
 
-.footer-mobile-number {
+.footer-mobile-number,.footer-email {
 	margin-top: 25px;
 }
 
@@ -1765,6 +1767,12 @@ button, input, textarea:focus {
 	font-weight: 700;
 }
 
+.footer-email a {
+	color: #fff;
+	font-size: 16px;
+	font-weight: 700;
+}
+
 .copyright-area {
 	border-top: 1px solid #2f3140;
 	text-align: center;
@@ -1806,3 +1814,11 @@ button, input, textarea:focus {
 .sucesso{
 	border:0px!important;
 }
+
+#nossas-semijoias .owl-carousel .owl-stage-outer { padding: 5% 0; }
+
+#nossas-semijoias .owl-item img {
+  transition: 0.45s;
+}
+
+#nossas-semijoias .owl-item.center img {transform: scale(2); }

@@ -100,11 +100,12 @@
     // Screenshort-slide owlCarousel
     $('.screenshort-slide.owl-carousel').owlCarousel({
         loop:true,
-        margin: 30,
+        margin: 100,
         mouseDrag:true,
         autoplay:true,
-        dots: false,
+        dots: true,
 		center:true,
+		width:200,
 		smartSpeed:800,
         responsiveClass:true,
         responsive:{
@@ -116,6 +117,29 @@
             },
             1000:{
                 items:5
+            }
+        }
+    });
+	
+	
+	// about owlCarousel
+    $('.about-slide.owl-carousel').owlCarousel({
+        loop: true
+        , margin: 5
+        , mouseDrag: true
+        , autoplay: true
+		, smartSpeed:800
+        , dots: false
+        , responsiveClass: true
+        , responsive: {
+            0: {
+                items: 1
+            , }
+            , 600: {
+                items: 1
+            }
+            , 1000: {
+                items: 1
             }
         }
     });
