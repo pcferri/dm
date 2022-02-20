@@ -1721,6 +1721,8 @@ button, input, textarea:focus {
 	margin-top: 25px;
 }
 
+
+
 .footer-subscribe form input {
 	width: 100%;
 	height: 35px;
@@ -1788,10 +1790,7 @@ button, input, textarea:focus {
 	color: #fff;
 }
 
-.copyright-area p a {
-	color: #918aff;
-}
-
+.politica-privacidade{color:#bab188;font-size:10px;}
 
 .destaque-texto-home{
 	color: #bab188;
