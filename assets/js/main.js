@@ -300,7 +300,7 @@ $.ajax({
 
 
 function emdesenvolvimento(){
-	alert('O APP Consultoras Dieni Moraes está em fase final de desenvolvimento e nas próximas semanas estará disponível.')
+	alert('O APP Dieni Moraes Semijoias está em fase final de desenvolvimento e nos próximos dias estará disponível.')
 }
 
 
