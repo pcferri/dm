@@ -189,27 +189,6 @@
 
 
 
-
-if (typeof MauticSDKLoaded == 'undefined') {
-	var MauticSDKLoaded = true;
-	var head            = document.getElementsByTagName('head')[0];
-	var script          = document.createElement('script');
-	script.type         = 'text/javascript';
-	script.src          = 'https://mautic.dienimoraes.com.br/media/js/mautic-form.js';
-	script.onload       = function() {
-		MauticSDK.onLoad();
-	};
-	head.appendChild(script);
-	var MauticDomain = 'https://mautic.dienimoraes.com.br';
-	var MauticLang   = {
-		'submittingMessage': "Por favor, aguarde..."
-	}
-}else if (typeof MauticSDK != 'undefined') {
-	MauticSDK.onLoad();
-}
-
-
-
 $.extend(true, $.magnificPopup.defaults, {  
     iframe: {
         patterns: {
@@ -373,7 +352,7 @@ function checkForm() {
 }(jQuery));
 
 $(document).ready(function() {
-  $("input[name='mauticform[txtcpf]'],input[name='mauticform[txtcelular]']").inputFilter(function(value) {
+  $("input[name='cpf'],input[name='celular']").inputFilter(function(value) {
     return /^\d*$/.test(value);  
   });
 });
@@ -387,23 +366,23 @@ function enviarForm(){
 	var qtdValidacoes = checkForm();	
 	if(qtdValidacoes == 0){	
 		
-		if(testaCPF($("input[name='mauticform[txtcpf]']").val()) == false){
-			$("input[name='mauticform[txtcpf]']").removeClass("sucesso");
-			$("input[name='mauticform[txtcpf]']").addClass("aviso");
+		if(testaCPF($("input[name='cpf']").val()) == false){
+			$("input[name='cpf']").removeClass("sucesso");
+			$("input[name='cpf']").addClass("aviso");
 			alert("O CPF informado é inválido.");
-			$("input[name='mauticform[txtcpf]']").focus();
+			$("input[name='cpf']").focus();
 			return;
 		}	
 
-		if(validateEmail($("input[name='mauticform[txtemail]']").val()) == false){
-			$("input[name='mauticform[txtemail]']").removeClass("sucesso");
-			$("input[name='mauticform[txtemail]']").addClass("aviso");
+		if(validateEmail($("input[name='email']").val()) == false){
+			$("input[name='email']").removeClass("sucesso");
+			$("input[name='email']").addClass("aviso");
 			alert("O e-mail informado é inválido.");
-			$("input[name='mauticform[txtemail]']").focus();
+			$("input[name='email']").focus();
 			return;
 		}			
 	
-		var frm = $('#mauticform_capturaconsultoradienimoraessemijoias');	
+		var frm = $('#frmCadastro');	
 		$('#cmdEnviar').hide();		
 		$('.loader-wrapper').show();
 		
@@ -413,12 +392,20 @@ function enviarForm(){
 			url: frm.attr('action'),
 			data: frm.serialize(),
 			success: function (data) {
-				$('#mauticform_capturaconsultoradienimoraessemijoias input').val('');
-				window.location.href="https://lp.dienimoraes.com.br/obrigado-revendedora";
+				console.log(data);
+				var result = JSON.parse(data);
+				if(result.status == "success"){
+					window.location.href = result.url;
+				}else{
+					$('#cmdEnviar').show();		
+					$('.loader-wrapper').hide();
+					alert(result.mensagem);
+				}				
 			},
 			error: function (data) {
-				$('#mauticform_capturaconsultoradienimoraessemijoias input').val('');
-				window.location.href="https://lp.dienimoraes.com.br/obrigado-revendedora";
+				$('#cmdEnviar').show();		
+				$('.loader-wrapper').hide();
+				alert("Ocorreu alguma falha no cadastramento, tente novamente mais tarde.");
 			},
 		});
 	}
@@ -432,7 +419,7 @@ var select_state, $select_state;
 var select_city, $select_city;
 var estados = [{"id":11,"sigla":"RO","nome":"Rondônia","regiao":{"id":1,"sigla":"N","nome":"Norte"}},{"id":12,"sigla":"AC","nome":"Acre","regiao":{"id":1,"sigla":"N","nome":"Norte"}},{"id":13,"sigla":"AM","nome":"Amazonas","regiao":{"id":1,"sigla":"N","nome":"Norte"}},{"id":14,"sigla":"RR","nome":"Roraima","regiao":{"id":1,"sigla":"N","nome":"Norte"}},{"id":15,"sigla":"PA","nome":"Pará","regiao":{"id":1,"sigla":"N","nome":"Norte"}},{"id":16,"sigla":"AP","nome":"Amapá","regiao":{"id":1,"sigla":"N","nome":"Norte"}},{"id":17,"sigla":"TO","nome":"Tocantins","regiao":{"id":1,"sigla":"N","nome":"Norte"}},{"id":21,"sigla":"MA","nome":"Maranhão","regiao":{"id":2,"sigla":"NE","nome":"Nordeste"}},{"id":22,"sigla":"PI","nome":"Piauí","regiao":{"id":2,"sigla":"NE","nome":"Nordeste"}},{"id":23,"sigla":"CE","nome":"Ceará","regiao":{"id":2,"sigla":"NE","nome":"Nordeste"}},{"id":24,"sigla":"RN","nome":"Rio Grande do Norte","regiao":{"id":2,"sigla":"NE","nome":"Nordeste"}},{"id":25,"sigla":"PB","nome":"Paraíba","regiao":{"id":2,"sigla":"NE","nome":"Nordeste"}},{"id":26,"sigla":"PE","nome":"Pernambuco","regiao":{"id":2,"sigla":"NE","nome":"Nordeste"}},{"id":27,"sigla":"AL","nome":"Alagoas","regiao":{"id":2,"sigla":"NE","nome":"Nordeste"}},{"id":28,"sigla":"SE","nome":"Sergipe","regiao":{"id":2,"sigla":"NE","nome":"Nordeste"}},{"id":29,"sigla":"BA","nome":"Bahia","regiao":{"id":2,"sigla":"NE","nome":"Nordeste"}},{"id":31,"sigla":"MG","nome":"Minas Gerais","regiao":{"id":3,"sigla":"SE","nome":"Sudeste"}},{"id":32,"sigla":"ES","nome":"Espírito Santo","regiao":{"id":3,"sigla":"SE","nome":"Sudeste"}},{"id":33,"sigla":"RJ","nome":"Rio de Janeiro","regiao":{"id":3,"sigla":"SE","nome":"Sudeste"}},{"id":35,"sigla":"SP","nome":"São Paulo","regiao":{"id":3,"sigla":"SE","nome":"Sudeste"}},{"id":41,"sigla":"PR","nome":"Paraná","regiao":{"id":4,"sigla":"S","nome":"Sul"}},{"id":42,"sigla":"SC","nome":"Santa Catarina","regiao":{"id":4,"sigla":"S","nome":"Sul"}},{"id":43,"sigla":"RS","nome":"Rio Grande do Sul","regiao":{"id":4,"sigla":"S","nome":"Sul"}},{"id":50,"sigla":"MS","nome":"Mato Grosso do Sul","regiao":{"id":5,"sigla":"CO","nome":"Centro-Oeste"}},{"id":51,"sigla":"MT","nome":"Mato Grosso","regiao":{"id":5,"sigla":"CO","nome":"Centro-Oeste"}},{"id":52,"sigla":"GO","nome":"Goiás","regiao":{"id":5,"sigla":"CO","nome":"Centro-Oeste"}},{"id":53,"sigla":"DF","nome":"Distrito Federal","regiao":{"id":5,"sigla":"CO","nome":"Centro-Oeste"}}];
 
-$select_state = $("select[name='mauticform[txtestado]']").selectize({
+$select_state = $("select[name='estado']").selectize({
   onChange: function(value) {
 	if (!value.length) return;
 	var id_estado = 0;
@@ -461,7 +448,7 @@ $select_state = $("select[name='mauticform[txtestado]']").selectize({
   }
 });
 
-$select_city = $("select[name='mauticform[txtcidade]']").selectize({
+$select_city = $("select[name='cidade']").selectize({
   valueField: 'nome',
   labelField: 'nome',
   searchField: ['nome']

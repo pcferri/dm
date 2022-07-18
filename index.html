@@ -43,15 +43,7 @@
 	</script>
 	<noscript><img height="1" width="1" style="display:none"
 	src="https://www.facebook.com/tr?id=3174652179247382&ev=PageView&noscript=1"
-	/></noscript>
-	<script>
-		(function(w,d,t,u,n,a,m){w['MauticTrackingObject']=n;
-			w[n]=w[n]||function(){(w[n].q=w[n].q||[]).push(arguments)},a=d.createElement(t),
-			m=d.getElementsByTagName(t)[0];a.async=1;a.src=u;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','https://mautic.dienimoraes.com.br/mtc.js','mt');
-
-		mt('send', 'pageview');
-	</script>
+	/></noscript>	
 </head>
 
 <body>
@@ -598,43 +590,40 @@
                         <h2>Faça seu pré-cadastro agora:</h2>
 						   <div class="contact-area">
 								<p><h5>Você deverá ter mais de 21 anos, não ter restrições no seu CPF e efetuar o cadastro em seu nome.</h5></p>
-								<form class="contact-form form" id="mauticform_capturaconsultoradienimoraessemijoias" onsubmit="return false;" action="https://mautic.dienimoraes.com.br/form/submit?formId=8" method="POST" data-mautic-form="capturaconsultoradienimoraessemijoias" enctype="multipart/form-data">
+								<form id="frmCadastro" class="contact-form form" onsubmit="return false;" action="https://app.dienimoraes.com.br/version-test/api/1.1/wf/cadastrar_candidata_site" method="POST" enctype="multipart/form-data">
 								<div class="controls">
 									<div class="row">
 										<div class="col-lg-6 col-md-12">
 											<div class="form-group">
-												<input type="text" name="mauticform[txtnome]" placeholder="Seu nome completo" required="required"> </div>
+												<input type="text" name="nome_completo" placeholder="Seu nome completo" required="required"> </div>
 										</div>
 										<div class="col-lg-6 col-md-12">
 											<div class="form-group">
-												<input type="text" name="mauticform[txtemail]" placeholder="Seu e-mail" required="required"> </div>
+												<input type="text" name="email" placeholder="Seu e-mail" required="required"> </div>
 										</div>
 										<div class="col-lg-6 col-md-12">
 											<div class="form-group">
-												<input type="text" name="mauticform[txtcelular]" placeholder="Seu telefone com DDD" required="required"> </div>
+												<input type="text" name="celular" placeholder="Seu telefone com DDD" required="required"> </div>
 										</div>
 										<div class="col-lg-6 col-md-12">
 											<div class="form-group">
-												<input type="text" name="mauticform[txtcpf]" placeholder="Seu CPF" required="required"> </div>
+												<input type="text" name="cpf" placeholder="Seu CPF" required="required"> </div>
 										</div>
 										<div class="col-lg-6 col-md-12">
 											<div class="form-group">
-												<input type="text" name="mauticform[txtbairro]" placeholder="Bairro" required="required"> 
+												<input type="text" name="bairro" placeholder="Bairro" required="required"> 
 											</div>											
 										</div>
 										<div class="col-lg-6 col-md-12">
 											<div class="form-group">
-												<select name="mauticform[txtestado]" required="required"><option value="">Selecione seu estado</option><option data-id="11" value="RO">Rondônia</option><option data-id="12" value="AC">Acre</option><option data-id="13" value="AM">Amazonas</option><option data-id="14" value="RR">Roraima</option><option data-id="15" value="PA">Pará</option><option data-id="16" value="AP">Amapá</option><option data-id="17" value="TO">Tocantins</option><option data-id="21" value="MA">Maranhão</option><option data-id="22" value="PI">Piauí</option><option data-id="23" value="CE">Ceará</option><option data-id="24" value="RN">Rio Grande do Norte</option><option data-id="25" value="PB">Paraíba</option><option data-id="26" value="PE">Pernambuco</option><option data-id="27" value="AL">Alagoas</option><option data-id="28" value="SE">Sergipe</option><option data-id="29" value="BA">Bahia</option><option data-id="31" value="MG">Minas Gerais</option><option data-id="32" value="ES">Espírito Santo</option><option data-id="33" value="RJ">Rio de Janeiro</option><option data-id="35" value="SP">São Paulo</option><option data-id="41" value="PR">Paraná</option><option data-id="42" value="SC">Santa Catarina</option><option data-id="43" value="RS">Rio Grande do Sul</option><option data-id="50" value="MS">Mato Grosso do Sul</option><option data-id="51" value="MT">Mato Grosso</option><option data-id="52" value="GO">Goiás</option><option data-id="53" value="DF">Distrito Federal</option></select>
+												<select name="estado" required="required"><option value="">Selecione seu estado</option><option data-id="11" value="RO">Rondônia</option><option data-id="12" value="AC">Acre</option><option data-id="13" value="AM">Amazonas</option><option data-id="14" value="RR">Roraima</option><option data-id="15" value="PA">Pará</option><option data-id="16" value="AP">Amapá</option><option data-id="17" value="TO">Tocantins</option><option data-id="21" value="MA">Maranhão</option><option data-id="22" value="PI">Piauí</option><option data-id="23" value="CE">Ceará</option><option data-id="24" value="RN">Rio Grande do Norte</option><option data-id="25" value="PB">Paraíba</option><option data-id="26" value="PE">Pernambuco</option><option data-id="27" value="AL">Alagoas</option><option data-id="28" value="SE">Sergipe</option><option data-id="29" value="BA">Bahia</option><option data-id="31" value="MG">Minas Gerais</option><option data-id="32" value="ES">Espírito Santo</option><option data-id="33" value="RJ">Rio de Janeiro</option><option data-id="35" value="SP">São Paulo</option><option data-id="41" value="PR">Paraná</option><option data-id="42" value="SC">Santa Catarina</option><option data-id="43" value="RS">Rio Grande do Sul</option><option data-id="50" value="MS">Mato Grosso do Sul</option><option data-id="51" value="MT">Mato Grosso</option><option data-id="52" value="GO">Goiás</option><option data-id="53" value="DF">Distrito Federal</option></select>
 											</div>
 											<div class="form-group">
-												<select name="mauticform[txtcidade]" required="required"><option value="">Selecione sua cidade</option></select>
+												<select name="cidade" required="required"><option value="">Selecione sua cidade</option></select>
 											</div>
-										</div>
-										<input type="hidden" name="mauticform[formId]" value="8">
-										<input type="hidden" name="mauticform[return]" value="">
-										<input type="hidden" name="mauticform[formName]" value="capturaconsultoradienimoraessemijoias">
+										</div>										
 										<div class="col-md-12">
-											<button type="button" class="button botao-formulario download-btn active-btn" name="mauticform[submit]" onclick="enviarForm();" id="cmdEnviar">Quero me candidatar agora</button>
+											<button type="button" class="button botao-formulario download-btn active-btn" onclick="enviarForm();" id="cmdEnviar">Quero me candidatar agora</button>
 										</div>
 									</div>
 								</div>
@@ -879,7 +868,7 @@
 
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/plugins.js?v=1"></script>    		
-	<script src="assets/js/main.min.js?v=4"></script>
+	<script src="assets/js/main.min.js?v=5"></script>
 </body>
 
 </html>
