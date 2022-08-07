@@ -386,13 +386,17 @@ function enviarForm(){
 		$('#cmdEnviar').hide();		
 		$('.loader-wrapper').show();
 		
-
+		const urlParams = new URLSearchParams(window.location.search);
+		var utm_campaign = urlParams.get('utm_campaign');
+		var parameters = frm.serialize();
+		if(utm_campaign != null){
+			parameters += "&campanha="+utm_campaign
+		}		
 		$.ajax({
 			type: frm.attr('method'),
 			url: frm.attr('action'),
-			data: frm.serialize(),
+			data: parameters,
 			success: function (data) {
-				console.log(data);
 				var result = JSON.parse(data);
 				if(result.status == "success"){
 					window.location.href = result.url;
