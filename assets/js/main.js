@@ -214,17 +214,16 @@ var $instagram = {
     user: "dienimoraessemijoias",
     title: "SIGA NOSSO INSTAGRAM",
     limit: 6,
-    token: 'IGQVJWNXl5OFlFaWJjQlAxY0JIQjBXRmZAQTGk2eVdZAclpTUENtRjNYd2hJeDJwak1DOXU4S2toVWEwcGUtS0RzQWxBNXllS0Y3a192ZA1FGS1RodUExajVTSlNROEY3NTAtcWR0Vm9QaGFMLTgydTFHOQZDZD',
     userid: 17841437909613030
 };
 
 $.ajax({
-	url: "https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token="+$instagram.token,
+	url: "https://app.dienimoraes.com.br/api/1.1/wf/get_instagram_access_token",
 	dataType: "jsonp",
 	type: "GET",
 	success: function(tt) {
 		var i = $("#instagram-grupo")
-			, o = (tt.access_token ? tt.access_token : $instagram.token)
+			, o = tt.response.access_token
 			, a = $instagram.userid;
 		$.ajax({
 			url: "https://graph.instagram.com/me/media?fields=permalink,media_url,media_type,thumbnail_url&access_token="+o,
