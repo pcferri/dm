@@ -219,7 +219,6 @@ var $instagram = {
 
 $.ajax({
 	url: "https://app.dienimoraes.com.br/api/1.1/wf/get_instagram_access_token",
-	dataType: "jsonp",
 	type: "GET",
 	success: function(tt) {
 		var i = $("#instagram-grupo")
