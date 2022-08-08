@@ -1824,3 +1824,18 @@ button, input, textarea:focus {
 }
 
 #nossas-semijoias-grupo .owl-item.center img {transform: scale(2); }
+
+.botao-menor{
+	clear:both;
+	margin-top:80px
+}
+
+.botao-menor a {
+	font-size: 16px;
+    color: #bab188;	
+}
+
+.botao-menor a:hover {
+	font-size: 16px;
+    color: #ffffff;
+}
