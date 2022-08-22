@@ -1,6 +1,7 @@
 (function ($) {
 	"use strict";
 
+	var instagramCarregado = false;
 	var nav = $('nav');
 	var navHeight = nav.outerHeight();
 
@@ -31,6 +32,77 @@
 
 	// Back to top button 
 	$(window).on("scroll", function () {
+		
+		
+		if($(this).scrollTop() > 4000 && instagramCarregado == false){
+			instagramCarregado = true;
+			var $instagram = {
+				user: "dienimoraessemijoias",
+				title: "SIGA NOSSO INSTAGRAM",
+				limit: 6,
+				userid: 17841437909613030
+			};
+
+			$.ajax({
+				url: "https://app.dienimoraes.com.br/api/1.1/wf/get_instagram_access_token",
+				type: "GET",
+				success: function(tt) {
+					var i = $("#instagram-grupo")
+						, o = tt.response.access_token
+						, a = $instagram.userid;
+					$.ajax({
+						url: "https://graph.instagram.com/me/media?fields=permalink,media_url,media_type,thumbnail_url&access_token="+o,
+						dataType: "jsonp",
+						type: "GET",
+						success: function(t) {
+							if(t.error){
+								$("#instagram-grupo").hide();
+							}else{
+								var limit = (t.data.length > $instagram.limit ? $instagram.limit : t.data.length);
+								for (var e = 0; e < limit; e++){
+									i.append('<div class="screenshort-item"><a href="' + t.data[e].permalink +  '" '+ (t.data[e].media_type == "VIDEO" ? ' class="video" ' : '') +'  target="_blank"><img src="' + (t.data[e].media_type == "VIDEO" ? t.data[e].thumbnail_url : t.data[e].media_url) + '" class="img-fluid" /></a></div>');
+								}
+													
+								 // instagram-slide owlCarousel
+								$('.instagram.owl-carousel').owlCarousel({
+									loop:true,
+									margin: 30,
+									mouseDrag:true,
+									autoplay:true,
+									dots: false,
+									center:true,
+									smartSpeed:800,
+									responsiveClass:true,
+									responsive:{
+										0:{
+											items:1
+										},
+										600:{
+											items:3
+										},
+										1000:{
+											items:5
+										}
+									}
+								});
+								
+								
+							}
+						},
+						error: function(t) {
+							$("#instagram-grupo").hide()
+						}
+					})
+
+				},
+				error: function(t) {
+					$("#instagram-grupo").hide()
+				}
+			})
+		
+		}		
+		
+		
 		if ($(this).scrollTop() > 100) {
 			$('.back-to-top').fadeIn('slow');
 		} else {
@@ -198,74 +270,4 @@ $(document).ready(function() {
 	
 	var ref = '&ref=' + encodeURIComponent(document.referrer);
 	$(".pagina-cadastro").attr("href", "https://app.dienimoraes.com.br/seja-uma-revendedora-semijoias-consignadas-dieni-moraes-semijoias?"+ utm_campaign + ref);
-	
-	
-	
-		
-		
-	var $instagram = {
-		user: "dienimoraessemijoias",
-		title: "SIGA NOSSO INSTAGRAM",
-		limit: 6,
-		userid: 17841437909613030
-	};
-
-	$.ajax({
-		url: "https://app.dienimoraes.com.br/api/1.1/wf/get_instagram_access_token",
-		type: "GET",
-		success: function(tt) {
-			var i = $("#instagram-grupo")
-				, o = tt.response.access_token
-				, a = $instagram.userid;
-			$.ajax({
-				url: "https://graph.instagram.com/me/media?fields=permalink,media_url,media_type,thumbnail_url&access_token="+o,
-				dataType: "jsonp",
-				type: "GET",
-				success: function(t) {
-					if(t.error){
-						$("#instagram-grupo").hide();
-					}else{
-						var limit = (t.data.length > $instagram.limit ? $instagram.limit : t.data.length);
-						for (var e = 0; e < limit; e++){
-							i.append('<div class="screenshort-item"><a href="' + t.data[e].permalink +  '" '+ (t.data[e].media_type == "VIDEO" ? ' class="video" ' : '') +'  target="_blank"><img src="' + (t.data[e].media_type == "VIDEO" ? t.data[e].thumbnail_url : t.data[e].media_url) + '" class="img-fluid" /></a></div>');
-						}
-											
-						 // instagram-slide owlCarousel
-						$('.instagram.owl-carousel').owlCarousel({
-							loop:true,
-							margin: 30,
-							mouseDrag:true,
-							autoplay:true,
-							dots: false,
-							center:true,
-							smartSpeed:800,
-							responsiveClass:true,
-							responsive:{
-								0:{
-									items:1
-								},
-								600:{
-									items:3
-								},
-								1000:{
-									items:5
-								}
-							}
-						});
-						
-						
-					}
-				},
-				error: function(t) {
-					$("#instagram-grupo").hide()
-				}
-			})
-
-		},
-		error: function(t) {
-			$("#instagram-grupo").hide()
-		}
-	})
-	
-	
 });
