@@ -27,7 +27,7 @@
 	}
 	
 	.navbar-nav .nav-item .nav-link {
-		font-size: 16px;
+		padding-bottom: 10px;
 	}
 
 }
@@ -88,6 +88,10 @@
 	.footer-link:last-child {
 		margin-bottom: 0px;
 	}
+	
+	.navbar-nav .nav-item .nav-link {
+		padding-bottom: 10px;
+	}
 
 }
 
@@ -106,7 +110,7 @@
 	}
 	#navbarDefault {
 		width: 100%;
-		height: 165px;
+		height: 211px;
 		overflow-y: scroll;
 	}
 	.home-area {

@@ -12,8 +12,10 @@
 	});
 	
 	// Navbar Menu Reduce 
-	$(window).trigger('scroll');
+	
 	$(window).on('scroll', function () {
+		
+
 		var pixels = 50;
 		var top = 1200;
 		if ($(window).scrollTop() > pixels) {
@@ -27,12 +29,7 @@
 			$('.scrolltop-mf').fadeIn(1000, "easeInOutExpo");
 		} else {
 			$('.scrolltop-mf').fadeOut(1000, "easeInOutExpo");
-		}
-	});
-
-	// Back to top button 
-	$(window).on("scroll", function () {
-		
+		}		
 		
 		if($(this).scrollTop() > 4000 && instagramCarregado == false){
 			instagramCarregado = true;
@@ -209,7 +206,7 @@
         , margin: 5
         , mouseDrag: true
         , autoplay: true
-        , dots: true
+        , dots: false
         , responsiveClass: true
         , responsive: {
             0: {
@@ -260,6 +257,22 @@ $.extend(true, $.magnificPopup.defaults, {
     }
 });
 
+(function($) {
+  $.fn.inputFilter = function(inputFilter) {
+	return this.on("input keydown keyup mousedown mouseup select contextmenu drop", function() {
+	  if (inputFilter(this.value)) {
+		this.oldValue = this.value;
+		this.oldSelectionStart = this.selectionStart;
+		this.oldSelectionEnd = this.selectionEnd;
+	  } else if (this.hasOwnProperty("oldValue")) {
+		this.value = this.oldValue;
+		this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+	  } else {
+		this.value = "";
+	  }
+	});
+  };
+}(jQuery));
 
 $(document).ready(function() {
 	const urlParams = new URLSearchParams(window.location.search);	
@@ -270,4 +283,61 @@ $(document).ready(function() {
 	
 	var ref = '&ref=' + encodeURIComponent(document.referrer);
 	$(".pagina-cadastro").attr("href", "https://app.dienimoraes.com.br/seja-uma-revendedora-semijoias-consignadas-dieni-moraes-semijoias?"+ utm_campaign + ref);
+	
+	$("input[name='celular']").inputFilter(function(value) {
+		return /^\d*$/.test(value);
+	  });
+	
+	var form = $('#contact-form');
+
+	// Get the messages div.
+	var formMessages = $('.form-message');
+
+	// Set up an event listener for the contact form.
+	$(form).submit(function(e) {
+		// Stop the browser from submitting the form.
+		e.preventDefault();
+		
+		$("#cmdEnviar").text("Enviando mensagem...");
+		$("#cmdEnviar").prop("disabled", true);
+
+
+		// Serialize the form data.
+		var formData = $(form).serialize();
+
+		// Submit the form using AJAX.
+		$.ajax({
+			type: 'POST',
+			url: $(form).attr('action'),
+			data: formData
+		})
+		.done(function(response) {
+			// Make sure that the formMessages div has the 'success' class.
+			$(formMessages).removeClass('error');
+			$(formMessages).addClass('success');
+
+			// Set the message text.
+			$(formMessages).text(JSON.parse(response).message);
+
+			// Clear the form.
+			$('#contact-form input,#contact-form textarea').val('');
+			$("#cmdEnviar").prop("disabled",false);			
+			$("#cmdEnviar").text("Enviar mensagem");
+		})
+		.fail(function(data) {
+			// Make sure that the formMessages div has the 'error' class.
+			$(formMessages).removeClass('success');
+			$(formMessages).addClass('error');
+			$("#cmdEnviar").prop("disabled",false);			
+			$("#cmdEnviar").text("Enviar mensagem");
+			// Set the message text.
+			if (data.responseText !== '') {
+				$(formMessages).text(data.responseText);
+			} else {
+				$(formMessages).text('Desculpe, ocorreu algum problema e sua mensagem não foi enviada, tente novamente.');
+			}
+		});
+	});
+
+
 });
