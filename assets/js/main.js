@@ -205,7 +205,7 @@
         loop: true
         , margin: 5
         , mouseDrag: true
-        , autoplay: true
+        , autoplay: false
         , dots: false
         , responsiveClass: true
         , responsive: {
