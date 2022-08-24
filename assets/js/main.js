@@ -203,17 +203,18 @@
     // Testimonials owlCarousel
     $('.testimonial-slide .owl-carousel').owlCarousel({
         loop: true
-        , margin: 5
+        , margin: 100
         , mouseDrag: true
-        , autoplay: false
-        , dots: false
+        , autoplay: true
+        , dots: true
+		, smartSpeed:800
         , responsiveClass: true
         , responsive: {
             0: {
                 items: 1
             , }
             , 600: {
-                items: 2
+                items: 1
             }
             , 1000: {
                 items: 2
