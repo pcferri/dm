@@ -200,9 +200,26 @@
         }
     });
     
+	$.fn.randomize = function(selector){
+	  var $elems = selector ? $(this).find(selector) : $(this).children(),
+	  $parents = $elems.parent();
+
+	  $parents.each(function(){
+		$(this).children(selector).sort(function(){
+			return Math.round(Math.random()) - 0.5;
+		}).detach().appendTo(this);
+	  });
+
+	  return this;
+	};
+
+
     // Testimonials owlCarousel
     $('.testimonial-slide .owl-carousel').owlCarousel({
-        loop: true
+		onInitialize : function(){
+			$('.testimonial-slide .owl-carousel').randomize();
+		}
+        , loop: true
         , margin: 100
         , mouseDrag: true
         , autoplay: true
@@ -221,6 +238,10 @@
             }
         }
     });
+	
+	
+	
+		
 	
     //  POPUP VIDEO
     $('.popup-video').magnificPopup({
