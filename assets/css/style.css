@@ -652,7 +652,7 @@ dl, ol, ul {
 }
 
 .navbar-b .navbar-brand {
-	background-image:url("../img/logo-dieni-moraes-completo.webp");
+	background-image:url("../img/logo-dieni-moraes-desktop.webp");
 	background-size: 200px;
     width: 200px;
     background-repeat: no-repeat;
@@ -660,7 +660,7 @@ dl, ol, ul {
 }
 
 .rodape-logo {
-	background-image:url("../img/logo-dieni-moraes-completo.webp");
+	background-image:url("../img/logo-dieni-moraes-desktop.webp");
 	background-size: 200px;
     width: 200px;
     background-repeat: no-repeat;
@@ -816,9 +816,9 @@ dl, ol, ul {
 	padding: 0;
 	height: 100%;
 	width: 100%;
-	opacity: 0.6;
+	opacity: 0.8;
     z-index: -1;
-    background: #2b2c2d;
+    background: #000000;
 }
 
 .svg-shape-bottom .bottom-shape {
