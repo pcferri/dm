@@ -100,6 +100,12 @@
 		margin-top: 15px;
 	}
 	
+	
+	.navbar-b.navbar-reduce .navbar-brand {
+		background-image:url("../img/logo-dieni-moraes-completo.webp");	
+	}
+
+	
 	.navbar-b .navbar-brand {
 		background-image:url("../img/logo-dieni-moraes-completo.webp");	
 	}
