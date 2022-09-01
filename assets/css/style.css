@@ -1822,6 +1822,13 @@ button, input, textarea:focus {
 	padding: 10px 15px;
 	border-radius: 3px;
 }
+
+.contact-area .form-message.info {
+	background: #00A8FF;
+	color: #fff;
+	padding: 10px 15px;
+	border-radius: 3px;
+}
 /**************************************
  * 16. Map Section Style
  *************************************/

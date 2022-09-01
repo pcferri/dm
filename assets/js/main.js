@@ -296,6 +296,14 @@ $.extend(true, $.magnificPopup.defaults, {
   };
 }(jQuery));
 
+function limpaMsg(){
+	var formMessages = $('.form-message');
+	$(formMessages).removeClass('success');
+	$(formMessages).removeClass('error');
+	$(formMessages).removeClass('info');
+	$(formMessages).text("");
+}
+
 $(document).ready(function() {
 	const urlParams = new URLSearchParams(window.location.search);	
 	var utm_campaign = urlParams.get('utm_campaign');
@@ -306,7 +314,7 @@ $(document).ready(function() {
 	var ref = '&ref=' + encodeURIComponent(document.referrer);
 	$(".pagina-cadastro").attr("href", "https://app.dienimoraes.com.br/seja-uma-revendedora-semijoias-consignadas-dieni-moraes-semijoias?"+ utm_campaign + ref);
 	
-	$("input[name='celular']").inputFilter(function(value) {
+	$("input[name='celular'],input[name='validacao']").inputFilter(function(value) {
 		return /^\d*$/.test(value);
 	  });
 	
@@ -319,6 +327,18 @@ $(document).ready(function() {
 	$(form).submit(function(e) {
 		// Stop the browser from submitting the form.
 		e.preventDefault();
+		
+		if($("input[name='validacao']").val() != "5"){	
+			$(formMessages).removeClass('success');
+			$(formMessages).removeClass('error');
+			$(formMessages).addClass('info');					
+			$(formMessages).text("Responda corretamente quanto é 2 + 3 para ser enviado o seu formulário de contato.");
+			
+			$([document.documentElement, document.body]).animate({
+				scrollTop: $(".form-message").offset().top -120
+			}, 200);
+			return;
+		}		
 		
 		$("#cmdEnviar").text("Enviando mensagem...");
 		$("#cmdEnviar").prop("disabled", true);
@@ -336,6 +356,7 @@ $(document).ready(function() {
 		.done(function(response) {
 			// Make sure that the formMessages div has the 'success' class.
 			$(formMessages).removeClass('error');
+			$(formMessages).removeClass('info');
 			$(formMessages).addClass('success');
 
 			// Set the message text.
@@ -345,11 +366,16 @@ $(document).ready(function() {
 			$('#contact-form input,#contact-form textarea').val('');
 			$("#cmdEnviar").prop("disabled",false);			
 			$("#cmdEnviar").text("Enviar mensagem");
+			
+			$([document.documentElement, document.body]).animate({
+				scrollTop: $(".form-message").offset().top -120
+			}, 200);
 		})
 		.fail(function(data) {
 			// Make sure that the formMessages div has the 'error' class.
 			$(formMessages).removeClass('success');
 			$(formMessages).addClass('error');
+			$(formMessages).removeClass('info');
 			$("#cmdEnviar").prop("disabled",false);			
 			$("#cmdEnviar").text("Enviar mensagem");
 			// Set the message text.
@@ -358,6 +384,9 @@ $(document).ready(function() {
 			} else {
 				$(formMessages).text('Desculpe, ocorreu algum problema e sua mensagem não foi enviada, tente novamente.');
 			}
+			$([document.documentElement, document.body]).animate({
+				scrollTop: $(".form-message").offset().top -120
+			}, 200);
 		});
 	});
 
