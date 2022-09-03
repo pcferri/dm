@@ -27,8 +27,6 @@
 
 @import url("font-awesome.min.css?v2");
 
-@import url("pe-icon-7-stroke.css?v2");
-
 @import url("magnific-popup.css");
 
 @import url("owl.carousel.min.css");
@@ -1172,13 +1170,14 @@ dl, ol, ul {
 	font-weight: 400;
 	font-size: 16px;
 	color:#bab188;
+	text-align: center;
 }
 
 .overview-info ul li i {
 	color: #bab188;
     font-size: 48px;
-    margin-right: 7px;
-    margin-top: 0px;
+	margin: auto;
+    margin-bottom: 12px;
 }
 /**************************************
  * 10.Pricing Section Style
