@@ -800,7 +800,7 @@ dl, ol, ul {
 	position: relative;
 	color: #fff;
 	text-align: center;
-	background: url(../img/fundo-capa-dieni-moraes-semijoias.webp);
+	background: url("../img/fundo-capa-dieni-moraes-semijoias.webp");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
@@ -958,7 +958,7 @@ dl, ol, ul {
 }
 
 .about-img {
-	vertical-align: right;
+	margin-top:50px;
 	height:345px;
 	width:345px;
 }
@@ -1053,7 +1053,7 @@ dl, ol, ul {
 	position: relative;
 	color: #fff;
 	text-align: center;
-	background: url(../img/sobre-a-dieni-moraes-2.webp);
+	background: url("../img/sobre-a-dieni-moraes-2.webp");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
@@ -1599,7 +1599,7 @@ dl, ol, ul {
 	position: relative;
 	color: #fff;
 	text-align: center;
-	background: url(../img/download-bg.webp);
+	background: url("../img/download-bg.webp");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
@@ -1843,7 +1843,7 @@ button, input, textarea:focus {
  *************************************/
 .footer-area {
 	background-color: #20222E;
-	background-image: url(../img/footer-bg.png);
+	background-image: url("../img/footer-bg.png");
 	background-position: center center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -2085,7 +2085,7 @@ button, input, textarea:focus {
 
 .tiktok{	
 	background-size: 15px;
-    background-image: url(../img/logo-tiktok-escuro.webp);
+    background-image: url("../img/logo-tiktok-escuro.webp");
 	display: inline-flex;
     background-repeat: no-repeat;
     background-position: center;
@@ -2101,3 +2101,7 @@ button, input, textarea:focus {
 .tiktok:hover{
 	background-color: #ffffff;
 }	
+
+.video-kit-area {
+	background: url("../img/kit-semijoias-dieni-moraes-semijoias.webp") center center/cover no-repeat;
+}
