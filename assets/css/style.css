@@ -1041,6 +1041,8 @@ dl, ol, ul {
 .screenshort-item img {
 	border-radius: 4px;
 	margin: auto;
+	max-height: 345px;
+	width:initial !important;
 }
 
 .owl-carousel.owl-drag .owl-item .center {

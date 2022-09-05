@@ -162,8 +162,7 @@
 		display: none;
 	}
 	.screenshort-item img {
-		margin: auto;
-		width: 100% !important;
+		margin: auto;				
 	}
 	.overview-img {
 		margin-top: 30px;
@@ -256,8 +255,7 @@
 
 	}
 	.screenshort-item img {
-		margin: auto;
-		width: 80% !important;
+		margin: auto;		
 	}
 	.overview-img {
 		margin-top: 30px;
@@ -353,8 +351,7 @@
 		display: none;
 	}
 	.screenshort-item img {
-		margin: auto;
-		width: 70% !important;
+		margin: auto;		
 	}
 	.testimonial-content-inner .testimonial-text p {
 		font-size: 14px;

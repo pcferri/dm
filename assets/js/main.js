@@ -372,8 +372,7 @@ function testaCPF(strCPF) {
 	return true;
 }
 
-$(document).ready(function() {
-	
+$(document).ready(function() {	
 	scrollWindow();
 	
 	$("#txtCelular,#txtCpf,input[name='cpf'],input[name='celular'],input[name='validacao']").inputFilter(function(value) {
@@ -540,3 +539,25 @@ $(document).ready(function() {
 
 
 });
+
+(function(history) {
+	var pushState = history.pushState;
+	history.pushState = function(state) {
+		if (typeof history.onpushstate == "function")
+		{
+			history.onpushstate({
+				state: state
+			});
+		}
+		return pushState.apply(history, arguments);
+	}
+})(window.history);
+window.onpopstate = history.onpushstate = function(e)
+{
+	if(window.location.hash != ""){
+		$('link[rel="canonical"]').attr('href', 'https://www.dienimoraes.com.br/'+ window.location.hash);
+	}
+};
+if(window.location.hash != ""){
+	$('link[rel="canonical"]').attr('href', 'https://www.dienimoraes.com.br/'+ window.location.hash);
+}
