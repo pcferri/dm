@@ -1150,7 +1150,8 @@ dl, ol, ul {
 	margin-top: 15px;
 	background: #2b2c2d;
 	display: inline-grid;
-	padding: 20px 20px;
+	padding: 10px;
+	max-width: 190px;
 	border-radius: 5px;
 	margin-right: 15px;
 	border-bottom: 3px solid #918aff00;
@@ -1170,14 +1171,14 @@ dl, ol, ul {
 .overview-info ul li h5 {
 	display: inline-block;
 	font-weight: 400;
-	font-size: 16px;
+	font-size: 12px;
 	color:#bab188;
 	text-align: center;
 }
 
 .overview-info ul li i {
 	color: #bab188;
-    font-size: 48px;
+    font-size: 24px;
 	margin: auto;
     margin-bottom: 12px;
 }
