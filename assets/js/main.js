@@ -214,7 +214,7 @@ $('.testimonial-slide .owl-carousel').owlCarousel({
 	, margin: 100
 	, mouseDrag: true
 	, autoplay: true
-	, dots: true
+	, dots: false
 	, animateOut: 'fadeOut'
 	, autoplayHoverPause:true
 	, animateIn: 'fadeIn'
