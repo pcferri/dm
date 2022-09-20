@@ -1,6 +1,5 @@
 var instagramCarregado = false;
 var fotosProdutosCarregados = false;
-var depoimentosCarregados = false;
 var nav = $('nav');
 var navHeight = nav.outerHeight();
 
@@ -39,14 +38,7 @@ function scrollWindow(){
 		fotosProdutosCarregados = true;
 		carregarFotosProdutos();	
 	}
-	
-	if($(this).scrollTop() >= 2000 && depoimentosCarregados == false){
-		depoimentosCarregados = true;
-		carregarDepoimentos();	
-	}
-	
-	
-	
+		
 	if ($(this).scrollTop() > 100) {
 		$('.back-to-top').fadeIn('slow');
 	} else {
@@ -172,41 +164,6 @@ function carregarFotosProdutos(){
 }
 
 
-function carregarDepoimentos(){
-	var i = $("#depoimentos-dieni-moraes-semijoias");
-	i.append("<div class='single-testimonial'>	<div class='testimonial-content-inner'><div class='testimonial-rating'>	<img src='assets/img/depoimentos/revendedora-jessica.webp'/></div><div class='testimonial-text'>	<h4>Jéssica - Santa Maria</h4>	<p>Guriaaas, gostaria de dizer para vocês com toda sinceridade do mundo, ameeeei as peças, cada mês eu fico ainda mais surpresa, uma peça mais linda que a outra, tem para todos os gostos! Minhas clientes ficam de cara porque toda vez que mostro as peças, elas tem que ficar com alguma coisa porque se apaixonam!!! E sem contar que sempre ficam chocadas com a qualidade delas e todos os benefícios de adquirir uma semijoia da nossa marca!! E obviamente, eu já adquiri muitas pecinhas para mim também né, não podia perder essa oportunidade. Estou apaixonada, nunca mais compro de outra marca!!</p></div>                                   	</div></div><div class='single-testimonial'><div class='testimonial-content-inner'>	<div class='testimonial-rating'>	   <img src='assets/img/depoimentos/revendedora-luana.webp'/>	</div>	<div class='testimonial-text'><h4>Luana - Panambi</h4><p>Me surpreendi muito tanto com as peças que são lindas e de ótima qualidade, quanto com o atendimento e o carinho de todas as meninas que ali juntas estão trabalhando para nos dar apoios e nos ajudar a superar ainda mais nossas vendas! Pensei que seria mais difícil, mas no meu segundo mês eu já me superei tanto e fiquei tão feliz que ultrapassei a meta que havia colocado para mim mesma! As minhas clientes esperam ansiosas para cada novo kit, que a cada mês vem ainda mais peças lindas e incríveis! Agradeço a Dieni pelo apoio e pela chance de estar fazendo parte dessa equipe maravilhosa!</p>	</div>                                   </div>	</div>   <div class='single-testimonial'>	<div class='testimonial-content-inner'><div class='testimonial-rating'>	<img src='assets/img/depoimentos/revendedora-ana.webp'/></div><div class='testimonial-text'>	<h4>Ana - Aceguá</h4>	<p>Me tornar uma Consultora Dieni Moraes semijoias, era o que precisava para conquistar meus objetivos, apesar de ser minha única renda, eu consigo tirar um bom lucro por mês, e o melhor, consigo trabalhar em casa cuidando da minha família. Obrigada empresa Dieni Moraes por confiar em mim.</p></div>                                   	</div></div>	 <div class='single-testimonial'>	<div class='testimonial-content-inner'><div class='testimonial-rating'>	<img src='assets/img/depoimentos/revendedora-leticia.webp'/></div><div class='testimonial-text'>	<h4>Letícia - Três Cachoeiras</h4>	<p>Desde já quero agradecer pela oportunidade de ser uma consultora e representar vocês em minha cidade. É um prazer fazer parte dessa equipe onde só recebo elogios a cada peça vendida ou mostrada, a cada dia tenho mais e mais satisfação em estar com vocês da Dieni Moraes Semijoias, além de ser uma renda extra me abre novos horizontes, novos caminhos onde eu estou amando, me sinto muito feliz em poder ajudar na autoestima de outras mulheres através de semijoias lindas e de qualidade.</p></div>                                   	</div></div>	 <div class='single-testimonial'><div class='testimonial-content-inner'>	<div class='testimonial-rating'><img src='assets/img/depoimentos/revendedora-caroline.webp'/>	</div>	<div class='testimonial-text'><h4>Caroline - Tupanciretã</h4><p>Ser uma consultora Dieni Moraes Semijóias é repassar qualidade, confiança e empoderamento para as minhas clientes. E a equipe que nos dá suporte é nota mil. Amo muito tudo isso!</p>	</div>                                   </div>	</div>		  	  <div class='single-testimonial'>	<div class='testimonial-content-inner'><div class='testimonial-rating'>	<img src='assets/img/depoimentos/revendedora-sandra.webp'/></div><div class='testimonial-text'>	<h4>Sandra - Nova Petrópolis</h4>	<p>Estou amando fazer parte da equipe e dos produtos e as clientes também. Só gratidão</p></div>                                   	</div></div>	 <div class='single-testimonial'>	<div class='testimonial-content-inner'><div class='testimonial-rating'>	<img src='assets/img/depoimentos/revendedora-simone.webp'/></div><div class='testimonial-text'>	<h4>Simone - Herval</h4>	<p>São peças maravilhosas. Eu sinto na palavra das minhas clientes e amigas como elas gostam e estão amando tudo. Eu não tenho nem como descrever como eu estou amando vender e também poder usar estas peças de qualidade e poder compartilhar com minhas amigas e clientes. Só gratidão por esta oportunidade!! </p></div>                                   	</div></div>		 <div class='single-testimonial'><div class='testimonial-content-inner'>	<div class='testimonial-rating'><img src='assets/img/depoimentos/revendedora-juliana.webp'/>	</div>	<div class='testimonial-text'><h4>Juliana - Marau</h4><p>Me tornei consultora Dieni Moraes em busca de uma renda extra. Atendimento sempre foi muito cordial e uma empresa muito correta. As semijoias no começo fiquei um pouco de receio na qualidade, mas hoje eu com certeza garanto ser peças de excelente qualidade e de um bom gosto e delicadeza.</p>	</div>                                   </div>	</div>		 <div class='single-testimonial'><div class='testimonial-content-inner'>	<div class='testimonial-rating'>	   <img src='assets/img/depoimentos/revendedora-veridiane.webp'/>	</div>	<div class='testimonial-text'><h4>Veridiane - Esteio</h4><p>Conheci a marca Dieni Moraes semijoias numa fase bem difícil da minha vida, estava em tratamento de um câncer que com a graça de Deus estou curada, a partir daí conheci as meninas que são muito atenciosas, amo cada peça, cada kit é uma espectativa. Super recomendo</p>		</div>                                   </div>	</div>");
-	
-	// Testimonials owlCarousel
-	$('.testimonial-slide .owl-carousel').owlCarousel({
-		onInitialize : function(){
-			$('.testimonial-slide .owl-carousel').randomize();
-		}
-		, loop: true
-		, margin: 100
-		, mouseDrag: true
-		, autoplay: true
-		, dots: true
-		, animateOut: 'fadeOut'
-		, autoplayHoverPause:true
-		, animateIn: 'fadeIn'
-		, smartSpeed:800
-		, responsiveClass: true
-		, responsive: {
-			0: {
-				items: 1
-			, }
-			, 600: {
-				items: 1
-			}
-			, 1000: {
-				items: 2
-			}
-		}
-	});
-
-}
-
-
 $('.back-to-top').on("click", function () {
 	$('html, body').animate({
 		scrollTop: 0
@@ -233,8 +190,48 @@ $('body').scrollspy({
 	offset: navHeight
 });
 
+$.fn.randomize = function(selector){
+  var $elems = selector ? $(this).find(selector) : $(this).children(),
+  $parents = $elems.parent();
+
+  $parents.each(function(){
+	$(this).children(selector).sort(function(){
+		return Math.round(Math.random()) - 0.5;
+	}).detach().appendTo(this);
+  });
+
+  return this;
+};
 
 
+
+// Testimonials owlCarousel
+$('.testimonial-slide .owl-carousel').owlCarousel({
+	onInitialize : function(){
+		$('.testimonial-slide .owl-carousel').randomize();
+	}
+	, loop: true
+	, margin: 100
+	, mouseDrag: true
+	, autoplay: true
+	, dots: true
+	, animateOut: 'fadeOut'
+	, autoplayHoverPause:true
+	, animateIn: 'fadeIn'
+	, smartSpeed:800
+	, responsiveClass: true
+	, responsive: {
+		0: {
+			items: 1
+		, }
+		, 600: {
+			items: 1
+		}
+		, 1000: {
+			items: 2
+		}
+	}
+});
 
 // about owlCarousel
 $('.about-slide.owl-carousel').owlCarousel({
@@ -262,18 +259,6 @@ $('.about-slide.owl-carousel').owlCarousel({
 	}
 });
 
-$.fn.randomize = function(selector){
-  var $elems = selector ? $(this).find(selector) : $(this).children(),
-  $parents = $elems.parent();
-
-  $parents.each(function(){
-	$(this).children(selector).sort(function(){
-		return Math.round(Math.random()) - 0.5;
-	}).detach().appendTo(this);
-  });
-
-  return this;
-};
 
 
 
