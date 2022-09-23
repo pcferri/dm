@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: 
+Disallow: /cgi-bin/
+Sitemap: https://www.dienimoraes.com.br/sitemap.xml
+Sitemap: https://app.dienimoraes.com.br/api/1.1/wf/sitemap_app
