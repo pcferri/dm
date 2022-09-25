@@ -1,5 +1,3 @@
-var instagramCarregado = false;
-var fotosProdutosCarregados = false;
 var nav = $('nav');
 var navHeight = nav.outerHeight();
 
@@ -29,16 +27,6 @@ function scrollWindow(){
 		$('.scrolltop-mf').fadeOut(1000, "easeInOutExpo");
 	}		
 	
-	if($(this).scrollTop() >= 4000 && instagramCarregado == false){
-		instagramCarregado = true;
-		carregarInstagram();	
-	}
-	
-	if($(this).scrollTop() >= 3000 && fotosProdutosCarregados == false){
-		fotosProdutosCarregados = true;
-		carregarFotosProdutos();	
-	}
-		
 	if ($(this).scrollTop() > 100) {
 		$('.back-to-top').fadeIn('slow');
 	} else {
@@ -163,6 +151,9 @@ function carregarFotosProdutos(){
 
 }
 
+
+carregarInstagram();
+carregarFotosProdutos();
 
 $('.back-to-top').on("click", function () {
 	$('html, body').animate({
