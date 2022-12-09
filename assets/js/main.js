@@ -63,7 +63,7 @@ function carregarInstagram(){
 						}else{
 							var limit = (t.data.length > $instagram.limit ? $instagram.limit : t.data.length);
 							for (var e = 0; e < limit; e++){
-								i.append('<div class="screenshort-item"><a href="' + t.data[e].permalink +  '" '+ (t.data[e].media_type == "VIDEO" ? ' class="video" ' : '') +'  target="_blank"><img src="' + (t.data[e].media_type == "VIDEO" ? t.data[e].thumbnail_url : t.data[e].media_url) + '" class="img-fluid" /></a></div>');
+								i.append('<div class="screenshort-item"><a href="' + t.data[e].permalink +  '" '+ (t.data[e].media_type == "VIDEO" ? ' class="video" ' : '') +'  target="_blank"><img src="' + (t.data[e].media_type == "VIDEO" ? t.data[e].thumbnail_url : t.data[e].media_url) + '" alt="Semijoia Dieni Moraes" class="img-fluid" /></a></div>');
 							}
 												
 							 // instagram-slide owlCarousel
@@ -110,17 +110,17 @@ function carregarInstagram(){
 function carregarFotosProdutos(){
 	var i = $("#fotos-produtos");
 	
-	i.append('<div class="screenshort-item"><img src="assets/img/semijoias/semijoia-na-modelo-2.webp" class="img-fluid" /></div>');
-	i.append('<div class="screenshort-item"><img src="assets/img/semijoias/semijoia-brinco.webp" class="img-fluid" /></div>');
-	i.append('<div class="screenshort-item"><img src="assets/img/semijoias/semijoia-na-modelo-3.webp" class="img-fluid" /></div>');
-	i.append('<div class="screenshort-item"><img src="assets/img/semijoias/semijoia-na-modelo-4.webp" class="img-fluid" /></div>');
-	i.append('<div class="screenshort-item"><img src="assets/img/semijoias/conjunto-de-semijoias.webp" class="img-fluid" /></div>');
-	i.append('<div class="screenshort-item"><img src="assets/img/semijoias/semijoia-colar.webp" class="img-fluid" /></div>');
-	i.append('<div class="screenshort-item"><img src="assets/img/semijoias/semijoia-pulseira.webp" class="img-fluid" /></div>');
-	i.append('<div class="screenshort-item"><img src="assets/img/semijoias/semijoia-pulseira-2.webp" class="img-fluid" /></div>');
-	i.append('<div class="screenshort-item"><img src="assets/img/semijoias/semijoia-pulseira-3.webp" class="img-fluid" /></div>');
-	i.append('<div class="screenshort-item"><img src="assets/img/semijoias/semijoia-na-modelo-1.webp" class="img-fluid" /></div>');
-	i.append('<div class="screenshort-item"><img src="assets/img/semijoias/semijoia-anel.webp" class="img-fluid" /></div>');
+	i.append('<div class="screenshort-item"><img src="assets/img/semijoias/semijoia-na-modelo-2.webp"  alt="Semijoia Dieni Moraes"  class="img-fluid" /></div>');
+	i.append('<div class="screenshort-item"><img src="assets/img/semijoias/semijoia-brinco.webp"  alt="Brinco semijoia Dieni Moraes" class="img-fluid" /></div>');
+	i.append('<div class="screenshort-item"><img src="assets/img/semijoias/semijoia-na-modelo-3.webp" alt="Conjunto colar semijoia Dieni Moraes" class="img-fluid" /></div>');
+	i.append('<div class="screenshort-item"><img src="assets/img/semijoias/semijoia-na-modelo-4.webp" alt="Conjunto colar semijoia Dieni Moraes" class="img-fluid" /></div>');
+	i.append('<div class="screenshort-item"><img src="assets/img/semijoias/conjunto-de-semijoias.webp"  alt="Conjunto colar semijoia Dieni Moraes" class="img-fluid" /></div>');
+	i.append('<div class="screenshort-item"><img src="assets/img/semijoias/semijoia-colar.webp" alt="Colar semijoia" class="img-fluid" /></div>');
+	i.append('<div class="screenshort-item"><img src="assets/img/semijoias/semijoia-pulseira.webp"  alt="Pulseira semijoia Dieni Moraes"  class="img-fluid" /></div>');
+	i.append('<div class="screenshort-item"><img src="assets/img/semijoias/semijoia-pulseira-2.webp"  alt="Pulseira semijoia Dieni Moraes"  class="img-fluid" /></div>');
+	i.append('<div class="screenshort-item"><img src="assets/img/semijoias/semijoia-pulseira-3.webp"  alt="Pulseira semijoia Dieni Moraes"  class="img-fluid" /></div>');
+	i.append('<div class="screenshort-item"><img src="assets/img/semijoias/semijoia-na-modelo-1.webp" alt="Semijoia Dieni Moraes"  class="img-fluid" /></div>');
+	i.append('<div class="screenshort-item"><img src="assets/img/semijoias/semijoia-anel.webp" alt="Anel semijoia Dieni Moraes" class="img-fluid" /></div>');
 
 
 	// Screenshort-slide owlCarousel
