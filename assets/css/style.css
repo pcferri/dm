@@ -444,18 +444,17 @@ dl, ol, ul {
 
 .back-to-top {
 	position: fixed;
-	display: none;
-	color: #bab188;
-	width: 40px;
-	height: 42px;
-	line-height: 40px;
-	border-radius: 5px;
-	right: 25px;
-	bottom: 20px;
-	text-align: center;
-	background: #dddddd;
-	transition: background 0.5s;
-	z-index: 11;
+    display: none;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 5px;
+    right: 86px;
+    bottom: 20px;
+    text-align: center;
+    background: #ddd;
+    transition: background .5s;
+    z-index: 11;
 }
 
 .back-to-top i {
