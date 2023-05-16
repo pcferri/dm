@@ -2,10 +2,6 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<sitemap>
 		<loc>https://www.dienimoraes.com.br/site.xml</loc>
-		<lastmod>2022-09-23</lastmod>
-	</sitemap>
-	<sitemap>
-		<loc>https://app.dienimoraes.com.br/api/1.1/wf/sitemap_app</loc>
-		<lastmod>2022-09-23</lastmod>
-	</sitemap>
+		<lastmod>2023-05-16</lastmod>
+	</sitemap>	
 </sitemapindex>
