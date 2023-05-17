@@ -921,7 +921,9 @@ jQuery(document).ready(function(){
 		});
 	}
 	
-	jQuery('select:not(.hazel-push-sidebar-content select)').selectWoo();
+	
+	
+	//jQuery('select:not(.hazel-push-sidebar-content select)').selectWoo();
 		
 	jQuery('.simpleselect').parent('p').css({'position':'relative','z-index':9});
 		
